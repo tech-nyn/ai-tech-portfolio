@@ -72,7 +72,7 @@ function AppShell() {
             <section className="top-section">
                 <div className="top-left">
                     <div className="heading-quote colored-box">
-                        <Text text={"Bringing Your Ideas To Life Through UI Design"} isBold={true} size={18}/>
+                        <Text text={"Bringing Your Ideas To Life Through UI Design"} isBold={true}/>
                         <IconButton
                             label={"Hire Me"} 
                             icon={waving_hand}
@@ -91,7 +91,6 @@ function AppShell() {
                     </div>
                     <div className="user-bio-container">
                         <div className="user-picture colored-box">
-                            {/* <img src={ user_avatar} /> */}
                         </div>
                         <div className="user-bio">
                             <div className="name-box colored-box">

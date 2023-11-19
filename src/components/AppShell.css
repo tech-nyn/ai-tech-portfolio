@@ -29,21 +29,19 @@
     box-sizing: border-box;
 }
 
-html, body, #root, .App{
-    height: 100%;
+html, body, #root{
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .App{
     overflow-x: hidden;
     background-color: var(--body-background);
     padding: 15px 15px;
-    /* width: 100vw; */
-    /* width: 100%; */
-    /* min-height: 100vh; */
+    width: 100%;
     display: flex;
     gap: var(--gap);
     flex-direction: column;
-    /* font-family: Times, 'Times New Roman', serif; */
 }
 
 
@@ -56,20 +54,27 @@ html, body, #root, .App{
 
 .top-section, .bottom-section{
     width: 100%;
-    min-height: calc(50% - 0px);
     gap: var(--gap);
     display: flex;
     min-height: 500px;
 }
 
+.top-section{
+    min-height: 550px;
+}
+
+.bottom-section{
+    height: 100px;
+}
+
 .bottom-left{
     height: 100%;
     width: 55%;
-    /* overflow: hidden; */
 }
 
 .bottom-right{
     width: 45%;
+    height: 100%;
 }
 
 
@@ -89,6 +94,7 @@ html, body, #root, .App{
 .heading-quote, .stat-card-container{
     width: 100%;
     height: 100%;
+    font-size: 60px;
 }
 
 .stat-card-container{
@@ -108,7 +114,7 @@ html, body, #root, .App{
 }
 
 .stat-card .card-value-cound{
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 900;
     color: #e9dddd;
 }
@@ -148,28 +154,26 @@ html, body, #root, .App{
 }
 
 .user-picture, .user-bio{
-    /*  */
-    height: calc(100% - 10%);
-    /*  */
     width: 50%;
+    align-self: stretch;
 }
 
 .user-bio{
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    height: calc(100% - 10%);
+    height: calc(100% - 0%);
     overflow: hiddens;
 }
 
 .location-box{
-    /* height: Calc(100% - 100px); */
     overflow: hidden;
+    flex-grow: 3;
+    align-self: stretch;
 }
 
 .location-globe{
     width: 100%;
-    /* height: calc(100% -50px); */
     object-fit: cover;
 }
 
@@ -228,7 +232,6 @@ html, body, #root, .App{
 
 .icon-button-icon{
     width: 25px;
-    float: right;
 }
 
 .icon-button{
@@ -290,6 +293,7 @@ html, body, #root, .App{
 
 .bottom-left div:not(.content-box-title){
     height: calc(100% - 10px);
+    
 }
 
 
@@ -297,10 +301,7 @@ html, body, #root, .App{
     display: flex;
     gap: var(--gap);
     overflow: hidden;
-    /* border-radius: var(--box-radius); */
     object-fit: cover;
-    /* max-height: 100%; */
-    /* justify-content:; */
 }
 
 
@@ -326,4 +327,54 @@ html, body, #root, .App{
 .social-icon{
     width: 14px;
     object-fit: cover
+}
+
+
+
+
+@media only screen and (max-width: 900px){
+    .top-section, .bottom-section{
+        flex-direction: column-reverse;
+    }
+
+    .top-right, .top-left, .bottom-right, .bottom-left{
+        width: 100%;
+    }
+
+    .heading-quote{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .heading-quote button{
+        align-self: center;
+        margin-left: 10px;
+    }
+
+    .stat-card-container{
+        height: 150px;
+        /* margin-bottom: 100px; */
+    }
+
+    .bottom-left{
+        height: 300px;
+    }
+}
+
+
+@media only screen and (max-width: 529px){
+    .user-bio-container{
+        display:  flex;
+        flex-direction: column;
+    }
+
+    .user-picture, .user-bio{
+        width: 100%;
+    }
+
+    .heading-quote{
+        font-size: 24px;
+    }
 }
